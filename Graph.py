@@ -1,3 +1,6 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
 class Graph:
     def __init__(self,graphDict=None):
         if graphDict == None:
@@ -36,6 +39,14 @@ class Graph:
             if str(i[0]) in self.graphDict:
                 self.graphDict[str(i[0])].append(str(i[1]))
     
+    def visualize_graph(self):
+        g = nx.Graph()
+        edges = self.generate_edges()
+        for i in edges:
+            g.add_edge(i[0],i[1],)
+        nx.draw(g,with_labels = True)
+        plt.savefig("Graph-Theory/filename.png")
+        
     def __str__(self):
         res = "vertices: "
         for k in self.graphDict:

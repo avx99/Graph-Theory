@@ -1,5 +1,6 @@
-
 import Graph as g
+
+
 
 if __name__ == '__main__':
     graph = { "a" : ["c"],
@@ -11,6 +12,7 @@ if __name__ == '__main__':
         }
     G = g.Graph(graph)
     v = G.generate_edges()
-    G.add_edges({("b","kl"),("b","v"),("v","x")})
+    G.add_edges({("b","l"),("b","v"),("v","x")})
     gg = G.get_graph()
-    print(G)
+    G.visualize_graph()
+    # print(G)
